@@ -81,11 +81,14 @@ const updatePasswordStrength = () => {
 // copying password on click of copy icon
 copyBtn.addEventListener("click", () => {
     const password = passwordOutput.value;
+    //copying in clipboard
     navigator.clipboard.writeText(password);
 
+    // adding active class
     const copyAnimation = document.querySelector(".copy");
     copyAnimation.classList.add("active");
 
+    // removing active class after 1 second
     setTimeout(() => {
         copyAnimation.classList.remove("active");
     }, 1000)
