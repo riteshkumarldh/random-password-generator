@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random password generator</title>
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- box icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- custom js file -->
+    <script src="./main.js" defer></script>
+</head>
+<body>
+
+    <main class="wrapper">
+        <div class="password-input">
+            <input type="text" class="pass-input" readonly value="Ritesh-kumar" data-password>
+            <button data-copy>
+                <i class='bx bx-copy'></i>
+            </button>
+        </div>
+
+        <div class="pass-strength">
+            <div class="line">
+                <div class="overline" data-overline></div>
+            </div>
+            
+            <p>This is a <span data-password-status>weak</span> password</p>
+        </div>
+
+        <div class="pass-count">
+            <div>
+                <p>password length</p>
+                <p data-password-length>8</p>
+            </div>
+            <input type="range" min="1" max="30" value="8" data-password-range>
+        </div>
+
+        <div class="checkboxes">
+            <div class="checkbox">
+                <input type="checkbox" name="uppercase" id="uppercase" data-input checked>
+                <label for="uppercase">Uppercase [A - Z]</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="lowercase" id="lowercase" data-input>
+                <label for="lowercase">Lowercase [a - z]</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="numbers" id="numbers" data-input>
+                <label for="numbers">Numbers [0 - 9]</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="spacialchar" id="spacialchar" data-input>
+                <label for="spacialchar">Speacial Character [!@#$%^&*]</label>
+            </div>
+
+        </div>
+        
+        <button class="generate-btn" data-generateBtn>Generate</button>
+
+    </main>
+
+    <div class="copy">
+        copied successfully
+    </div>
+    
+
+
+</body>
+</html>

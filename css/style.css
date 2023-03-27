@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: hsl(0, 0%, 85%);
+  min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 450px;
+  width: 100%;
+  padding: 5rem 2rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.8rem;
+}
+.wrapper .password-input {
+  height: 5rem;
+  position: relative;
+}
+.wrapper .password-input .pass-input {
+  height: 100%;
+  width: 100%;
+  padding-inline: 1rem 4rem;
+  font-size: 2rem;
+  font: inherit;
+  font-weight: 500;
+  border: 1.5px solid hsl(121, 97%, 25%);
+  border-radius: 0.4rem;
+  letter-spacing: 1.5px;
+}
+.wrapper .password-input .pass-input:focus {
+  outline: none;
+}
+.wrapper .password-input button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+.wrapper .password-input button i {
+  color: hsl(121, 97%, 25%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.wrapper .password-input button i:active {
+  transform: scale(0.9);
+  background-color: hsl(120, 100%, 91%);
+}
+.wrapper .pass-strength {
+  margin-block: 1rem 4rem;
+}
+.wrapper .pass-strength .line {
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 85%);
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .pass-strength .line .overline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60%;
+  background-color: hsl(3, 61%, 51%);
+}
+.wrapper .pass-strength p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: hsl(121, 97%, 25%);
+  font-weight: 800;
+}
+.wrapper .pass-count {
+  width: 100%;
+}
+.wrapper .pass-count div {
+  display: flex;
+  justify-content: space-between;
+  color: hsl(121, 97%, 25%);
+  font-size: 1.5rem;
+}
+.wrapper .pass-count input {
+  width: 100%;
+  background-color: hsl(121, 97%, 25%);
+}
+.wrapper .checkboxes {
+  background-color: hsla(120, 100%, 91%, 0.6);
+  border-radius: 0.5rem;
+}
+.wrapper .checkboxes .checkbox {
+  padding: 1.5rem 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+.wrapper .checkboxes .checkbox:hover {
+  background-color: hsl(120, 100%, 91%);
+}
+.wrapper .checkboxes .checkbox input {
+  cursor: pointer;
+}
+.wrapper .checkboxes .checkbox label {
+  cursor: pointer;
+  user-select: none;
+}
+.wrapper .generate-btn {
+  background-color: hsl(121, 97%, 25%);
+  display: inline-block;
+  height: 5rem;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.copy {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(120, 100%, 91%);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: hsl(121, 97%, 25%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.copy.active {
+  visibility: visible;
+  pointer-events: all;
+  animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+  50% {
+    top: 10%;
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

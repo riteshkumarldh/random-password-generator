@@ -1,0 +1,207 @@
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap');
+
+// variables
+$dark-green: hsl(121, 97%, 25%);
+$light-green: hsl(121, 65%, 60%);
+$lighten-green: hsl(120, 100%, 91%);
+$white: hsl(0, 0%, 100%);
+$yellow: hsl(34, 92%, 58%);
+$red: hsl(3, 61%, 51%);
+$ff-Roboto: 'Roboto Mono', monospace;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 62.5%; }
+
+button { all: unset; }
+
+body {
+    font-family: $ff-Roboto;
+    background-color: hsl(0, 0%, 85%);
+    min-height: 100vh;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    max-width: 450px;
+    width: 100%;
+    padding: 5rem 2rem;
+    background-color: $white;
+    border-radius: 0.8rem;
+
+    .password-input {
+        height: 5rem;
+        position: relative;
+        
+        
+        .pass-input {
+            height: 100%;
+            width: 100%;
+            padding-inline: 1rem 4rem;
+            font-size: 2rem;
+            font: inherit;
+            font-weight: 500;
+            border: 1.5px solid $dark-green;
+            border-radius: 0.4rem;
+            letter-spacing: 1.5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.2rem;
+            cursor: pointer;
+
+            i {
+                color: $dark-green;
+                padding: 1rem;
+                border-radius: 0.5rem;
+
+                &:active {
+                    transform: scale(0.9);
+                    background-color: $lighten-green;
+                }
+            }
+
+        }
+    }
+
+    .pass-strength {
+        margin-block: 1rem 4rem;
+
+        .line {
+            width: 100%;
+            height: 0.5rem;
+            border-radius: 1rem;
+            background-color: hsl(0, 0%, 85%);
+            position: relative;
+            overflow: hidden;
+
+            .overline {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 60%;
+                background-color: $red;
+            }
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: $dark-green;
+            font-weight: 800;
+        }
+    }
+
+    .pass-count {
+        width: 100%;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            color: $dark-green;
+            font-size: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            background-color: $dark-green;
+        } 
+    }
+
+
+
+    .checkboxes {
+        background-color: hsl(120, 100%, 91%, 0.6);
+        border-radius: 0.5rem;
+
+        .checkbox {
+            padding: 1.5rem 1rem;
+            display: flex;
+            gap: 1.5rem;
+
+            &:hover {
+                background-color: $lighten-green;
+            }
+
+            input {
+                cursor: pointer;
+            }
+
+            label {
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+
+    .generate-btn {
+        background-color: $dark-green;
+        display: inline-block;
+        height: 5rem;
+        color: $white;
+        width: 100%;
+        margin-top: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 800;
+        font-size: 2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+}
+
+.copy {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: $lighten-green;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: $dark-green;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.copy.active {
+    visibility: visible;
+    pointer-events: all;
+    animation: slideDown 1s ease forwards ;
+}
+
+@keyframes slideDown {
+    0% {
+        top: 5%;
+        opacity: 0;
+    }
+
+    50% {
+        top: 10%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 5%;
+        opacity: 0;
+    }
+}
